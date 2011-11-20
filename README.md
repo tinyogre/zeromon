@@ -4,9 +4,20 @@ Zeromon
 About
 -----
 
-I was looking for simple, lightweight, server monitoring tools.  I had some goals:
+I was looking for simple, lightweight, server monitoring tools.  My
+hosting provider has been sending me emails telling my server has been
+rebooted due to going over its memory quota (Though it never actually
+does get rebooted, every time I get one of those emails, the uptime is
+still measured in days), but the monitoring they provide never shows
+me over half my quota, and usually under 1/3rd.  So, I've probably got
+some very brief spikes going on that are below the granularity of the
+tools they give me, but still triggering alerts from their automated
+systems.
+
+I had some goals:
+
 * It shouldn't take more than 5 minutes to install and configure
-* It should show me my server's overall memory utilization with a granularity of 5 seconds or better
+* It should graph, in a browser, my server's overall memory utilization with a granularity of 5 seconds or better
 * If I see a spike, I should be able to easily figure out what process(es) caused it
 
 I basically gave up after failing to build, install, or configure
@@ -33,3 +44,17 @@ Running it
 * Watch the output from webmon.lua too to see the top 5 processes by memory usage at each tick.  Not in the web interface (yet?)
 
 You can also run client.py if you JUST want to watch the raw sample data.
+
+For the curious
+---------------
+
+The big spikes I've identified using this so far are from php
+processes, not the django apps I was kind of expecting to be the
+problem spots.  Which narrows it down to one of four wordpress blogs
+on the server (None of them are high traffix, and two of them are
+practically invisible to the world).  Loading the main pages myself
+causes spikes too, but not as big as some of the others I've seen.
+There must be something that causes larger memory usage that users are
+doing, perhaps spam comments getting blocked automatically, for
+example.  I haven't tried to correlate it with the rest of my logs
+yet.
