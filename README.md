@@ -28,7 +28,7 @@ Running it
 
 * On any machine that can talk to the server, modify buzzclient/webmon.lua to point to your server. You can run it on the same machine as the server if you want, but if you're concerned with memory usage, why run even more stuff on that server?
 * Run webmon.lua with luajit
-* Point a browser at http://<machine-with-webmon>:9901/index.html
+* Point a browser at http://(machine-with-webmon):9901/index.html
 * Behold your memory usage!
 * Watch the output from webmon.lua too to see the top 5 processes by memory usage at each tick.  Not in the web interface (yet?)
 
