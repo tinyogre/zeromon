@@ -5,7 +5,7 @@ require('poller')
 
 local zctx = zmq.init(1)
 local sub = zctx:socket(zmq.SUB)
-sub:connect('tcp://rumsey.org:9900')
+sub:connect('tcp://localhost:9900')
 sub:setopt(zmq.SUBSCRIBE, '')
 
 function static(request, args)

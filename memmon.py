@@ -44,7 +44,7 @@ def loop():
 
     while True:
         dthandler = lambda obj: obj.isoformat() if isinstance(obj, datetime.datetime) else None
-        f = open(os.path.expanduser('~/rumsey.org/memlog.json'), 'w')
+        f = open(os.path.expanduser('~/memlog.json'), 'w')
         samples.append(sample())
         if len(samples) > LOG_SIZE:
             samples = samples[1:] # Dumb stupid slicing, probably

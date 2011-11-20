@@ -16,7 +16,7 @@ So here it is.  If you try to use it, it will probably fail the first
 requirement, it relies on things I already have lying around:
 
 * luajit
-* buzz (another project of mine)
+* buzz (another project of mine, a lua web framework)
 * zeromq, plus python AND lua bindings for same
 
 Plus it only monitors one thing and has no configuration to speak
@@ -26,9 +26,10 @@ Running it
 ----------
 * On your server to be monitored, run python server.py
 
-* On any machine that can talk to the server, modify buzzclient/webmon.lua to point to your server.
+* On any machine that can talk to the server, modify buzzclient/webmon.lua to point to your server. You can run it on the same machine as the server if you want, but if you're concerned with memory usage, why run even more stuff on that server?
 * Run webmon.lua with luajit
 * Point a browser at http://<machine-with-webmon>:9901/index.html
 * Behold your memory usage!
 * Watch the output from webmon.lua too to see the top 5 processes by memory usage at each tick.  Not in the web interface (yet?)
 
+You can also run client.py if you JUST want to watch the raw sample data.
