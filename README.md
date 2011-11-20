@@ -51,7 +51,7 @@ For the curious
 The big spikes I've identified using this so far are from php
 processes, not the django apps I was kind of expecting to be the
 problem spots.  Which narrows it down to one of four wordpress blogs
-on the server (None of them are high traffix, and two of them are
+on the server (None of them are high traffic, and two of them are
 practically invisible to the world).  Loading the main pages myself
 causes spikes too, but not as big as some of the others I've seen.
 There must be something that causes larger memory usage that users are
